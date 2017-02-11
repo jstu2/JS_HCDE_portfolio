@@ -2,7 +2,7 @@
 //last edited February 10th, 2017
 //this program shows Albuquerue, NM which has a mountainous desert terrain with a pueblo, tram, and hot air balloons over 
 //the course of a 24 hour period. The background changes from day to night showing stars in the background. In this program, I 
-//experimented with text, frameRate, modulo, altering colors inversely, and for loop used for adobe knobs
+//experimented with text, frameRate, modulo, altering colors inversely, rotation of balloons, and for loop used for adobe knobs
 colorChange = 0 //how much the colors are added to/subtracted from over the course of the day
 shapeX = 0 //balloon X
 shapeY = 0 //balloon Y
