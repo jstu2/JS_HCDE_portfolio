@@ -3,19 +3,19 @@
 //this program shows Albuquerue, NM which has a mountainous desert terrain with a pueblo, tram, and hot air balloons over 
 //the course of a 24 hour period. The background changes from day to night showing stars in the background. In this program, I 
 //experimented with text, frameRate, modulo, altering colors inversely, rotation of balloons, and for loop used for adobe knobs
-colorChange = 0 //how much the colors are added to/subtracted from over the course of the day
-shapeX = 0 //balloon X
-shapeY = 0 //balloon Y
+colorChange = 0; //how much the colors are added to/subtracted from over the course of the day
+shapeX = 0; //balloon X
+shapeY = 0; //balloon Y
 
-jumpValueX =  0 //balloon X location
-jumpValueY = 0 //balloon Y location
-jumpDirX = .4  // ballon X direction and speed
-jumpDirY = 1//speed and direction of balloons for Y
+jumpValueX =  0; //balloon X location
+jumpValueY = 0; //balloon Y location
+jumpDirX = .4;  // ballon X direction and speed
+jumpDirY = 1;//speed and direction of balloons for Y
 
-cloudValueX = 0 //cloud x movement
-cloudValueY = 0 //cloud y movement
-jumpDirCloudX = 1 //cloud direction X
-jumpDirCloudY = 0 //cloud direction Y 
+cloudValueX = 0; //cloud x movement
+cloudValueY = 0; //cloud y movement
+jumpDirCloudX = 1; //cloud direction X
+jumpDirCloudY = 0; //cloud direction Y 
 
 
 function setup() {
@@ -26,12 +26,12 @@ function setup() {
 function draw() {
   
   currentTime= abqTime()
-  balloonX = 200 * cos((-currentTime*2*PI)/1000) //circular equation for balloon movement for X
-  balloonY = 400 * sin((-currentTime*2*PI)/1000) //circular equation for ballon movement for Y
+  balloonX = 200 * cos((-currentTime*2*PI)/1000); //circular equation for balloon movement for X
+  balloonY = 400 * sin((-currentTime*2*PI)/1000); //circular equation for ballon movement for Y
  
   if (currentTime > 800){ //if frame rate is greater than 800, make the balloons stop moving 
-    balloonX = -400 //balloonX moves off the screen
-    balloonY = 0 //balloonY movement
+    balloonX = -400; //balloonX moves off the screen
+    balloonY = 0; //balloonY movement
   }
   
   background (174 - colorChange, 232 - colorChange, 249 - colorChange); //background will be changed by variable colorChange
@@ -40,7 +40,7 @@ function draw() {
     jumpValueY = jumpValueY - jumpDirY; //tram Y movement
   }
   if (currentTime > 800){ //if frame rate is greater than 800, make the cloud move across the sky one time
-    cloudValueX =  cloudValueX -  - jumpDirCloudX ; //cloud will move to the right straight across the picture
+    cloudValueX =  cloudValueX -  - jumpDirCloudX; //cloud will move to the right straight across the picture
 
   }
   //makes the tram  move up
@@ -51,14 +51,14 @@ function draw() {
 
   if (currentTime > 600 && currentTime < 1000){ //if frame count is greater than 600 and less than 1000, make the colorChange 
   //variable equal to current value plus .5 to make the color lighter
-    colorChange =  colorChange + .5
+    colorChange =  colorChange + .5;
   }
   if (currentTime > 1300){//if frame count is greater than 1300 make the colorChange 
   //variable equal to current value minus .5 to make the color darker
-    colorChange = colorChange - .5
+    colorChange = colorChange - .5;
   }
   if (colorChange < 0){ //resets color change value when currentTime is back at zero
-     colorChange =  0
+     colorChange =  0;
   }
   
   // calls background stars with parameters for location
@@ -121,11 +121,11 @@ function draw() {
   
   //adobe knobs top
   for (i = 570; i < 695; i += 15){ //for loop for adobe knobs top, repeats a knob for every 15 x coordinates
-    adobeKnobs(i, 485)
+    adobeKnobs(i, 485);
   }
   //adobe knobs bottom
   for ( i = 570; i < 760; i +=15){ //for loop for adobe knobs bottom
-    adobeKnobs(i, 532)
+    adobeKnobs(i, 532);
   }
 
   // calls clouds
@@ -146,12 +146,12 @@ function draw() {
 
 
 function abqTime(){
-  return frameCount % 1800 // modulo loops frameCount at 1800 by returning remainder after dividing by 1800
+  return frameCount % 1800; // modulo loops frameCount at 1800 by returning remainder after dividing by 1800
   }
 
 //adobe knobs
 function adobeKnobs(knobX, knobY){ //knobs x and y
-  fill(135, 102, 32) // brown
+  fill(135, 102, 32); // brown
   ellipse(knobX, knobY, 5,5); // knobs location defined in parameter and size
   }
 /// stars
@@ -182,14 +182,14 @@ function cloud(c,d){ //cloud x and y coordinates
 //balloons
 function balloon(shapeX,shapeY,color1,color2,color3, color4, color5, color6, color7, color8, color9){ //ballon x,y, and all colors
   fill(255, 129, 50); // orange
-  ellipse(shapeX + 10,shapeY - 3,10,20) //orange fire for balloon
+  ellipse(shapeX + 10,shapeY - 3,10,20); //orange fire for balloon
   stroke(0); //outline
   strokeWeight(2); //thicker outline
   fill(color4, color5, color6); // first ballon colors
-  ellipse(shapeX-1, shapeY + -50, 50,60) //left outer balloon area
-  ellipse(shapeX+20, shapeY + -50, 50,60) //right outer balloon area
+  ellipse(shapeX-1, shapeY + -50, 50,60); //left outer balloon area
+  ellipse(shapeX+20, shapeY + -50, 50,60); //right outer balloon area
   fill(color1, color2, color3); // colors for second balloon
-  ellipse(shapeX + 10, shapeY + -50, 50, 70)
+  ellipse(shapeX + 10, shapeY + -50, 50, 70);
   rect(shapeX,shapeY - 22, 20,10); //inner ballon
   fill(color6, color7, color8); //lime green center
   ellipse(shapeX + 10, shapeY -50, 14,70); //lime green ellipse
