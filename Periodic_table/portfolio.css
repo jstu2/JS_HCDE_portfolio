@@ -18,6 +18,7 @@ h2 {
   color: #26bed6;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 16pt;
+	text-align: center;
 }
 
 h3 {
@@ -36,6 +37,7 @@ h6 {
 	font-size: 12pt; 
 	padding-bottom: 10px;
     	margin-bottom: 0px;
+	text-align: center;
 } 
 li {
 	list-style: none;
