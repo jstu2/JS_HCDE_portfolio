@@ -25,7 +25,7 @@ function draw() {
   background(0); //black
   fill(255); //white
   textSize(25); //big text
-  text("Period Table of Elements", 225, 70) //title
+  text("Periodic Table of Elements", 225, 70) //title
   textSize(18); // smaller text
   text("Hover to view actual values", 245, 100); // text
   text("Click to switch between melting point and boiling point", 180, 130); // text
